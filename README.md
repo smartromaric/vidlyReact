@@ -1,5 +1,5 @@
-#vidly app is a app use to train myself 
-#vidly is talking about a handly of selling movies website 
+# vidly app is a app use to train myself 
+# vidly is talking about a handly of selling movies website 
 
 
 # Getting Started with Create React App
