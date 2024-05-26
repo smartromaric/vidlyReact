@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route,Routes,Navigate } from 'react-router-dom';
+import Movies from './components/movies';
+import Customers from './components/Customers';
+import Rentals from './components/Rentals';
+import NotFound from './components/NotFound';
+import NavBar from './components/NavBar';
+import MovieForm from './components/MovieForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Movies/> */}
+      <NavBar/>
+      <Routes>
+        <Route path='/customers' element={<Customers/>}/>
+        <Route path='/rentals' Component={Rentals}/>
+        <Route path="/not-found" Component={NotFound}/>
+        <Route path="*" element={<Navigate to="/not-found" />} />
+        <Route path="/movies" element={<Movies/>} />
+        <Route path="/" exact element={<Navigate to ="/movies" />} />
+        <Route path='movies/:id' element={<MovieForm/>} />
+        
+      </Routes>
+    </>
   );
 }
 
